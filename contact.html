@@ -5,8 +5,407 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - MyComp</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        /* Contact Page Specific Styles - GOLD THEME */
+        .contact-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #faf8f5 0%, #f0ece6 100%);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-form,
+        .contact-info {
+            background: rgba(255,255,255,0.95);
+            padding: 4rem 3rem;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border: 3px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .contact-form h2,
+        .contact-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #1a1a1a;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-style: italic;
+            font-weight: 800;
+        }
+
+        .form-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1.5rem;
+            border: 3px solid #e8ddd4;
+            border-radius: 15px;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            background: #fafafa;
+            font-weight: 500;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 0 5px rgba(255, 215, 0, 0.2);
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #1a1a1a;
+            padding: 1.5rem 4rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #FFA500, #FF8C00);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.5);
+            color: white;
+        }
+
+        .info-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #f0ece6;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-item h4 {
+            font-family: 'Playfair Display', serif;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .info-item p {
+            font-family: 'Crimson Text', serif;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #FFD700;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .social-icon:hover {
+            background: #FFA500;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .why-choose-us h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 4rem;
+            font-style: italic;
+            font-weight: 800;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .reason-item {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            border: 2px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .reason-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .reason-icon {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .reason-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            font-weight: 700;
+        }
+
+        .reason-item p {
+            font-family: 'Crimson Text', serif;
+            color: #666;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .contact-cta-section {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border-radius: 20px;
+            color: #1a1a1a;
+        }
+
+        .contact-cta-section p {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0a0a0a;
+            color: #FFD700;
+            padding: 100px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 2rem;
+            font-style: italic;
+            font-weight: 700;
+        }
+
+        .footer-section h3 {
+            font-size: 2.2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.6rem;
+        }
+
+        .footer-section p {
+            font-family: 'Crimson Text', serif;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #FFD700;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+            transform: translateX(5px);
+            display: inline-block;
+        }
+
+        .footer-bottom {
+            border-top: 2px solid #333;
+            padding-top: 2rem;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+        }
+
+        /* Success Popup */
+        .success-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: #1a1a1a;
+            color: #FFD700;
+            padding: 4rem;
+            border-radius: 25px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.4);
+            z-index: 9999;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            max-width: 500px;
+            border: 3px solid #FFD700;
+        }
+
+        .success-popup.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .success-popup h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            font-weight: 700;
+        }
+
+        .success-popup p {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .popup-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .popup-backdrop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .close-popup {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #1a1a1a;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .close-popup:hover {
+            background: linear-gradient(135deg, #FFA500, #FF8C00);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        @media screen and (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-form,
+            .contact-info {
+                padding: 2rem;
+            }
+
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-icons {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
